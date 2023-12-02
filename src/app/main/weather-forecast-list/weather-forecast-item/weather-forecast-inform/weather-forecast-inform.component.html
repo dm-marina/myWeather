@@ -1,0 +1,58 @@
+<ion-content  [fullscreen]="true" [ngClass]="{columnDark:toDark===false}">
+    <div class="column ion-padding" [ngClass]="{columnDark:toDark===false}">
+        <p class="day ion-margin-bottom ion-margin-top">{{day.datetime |date:'EEEE'}}</p> 
+        <h3 class="temp ion-margin-bottom"  *ngIf="toCelsius===false">{{day.tempmax}} </h3>
+        <h3 class="temp ion-margin-bottom"  *ngIf="toCelsius===true">{{day.tempmax | toCelsius}} </h3>
+        <span class="weather-icon ion-margin-bottom"> 
+            <img src="../../../assets/images/{{day.icon}}.svg" alt="{{day.icon}}">
+        </span>
+        <ion-row size="12" class="ion-margin-bottom">
+            <ion-col >
+                <div class="text"  *ngIf="toCelsius===false">mintemp: {{day.tempmin}}</div>
+                <div class="text"  *ngIf="toCelsius===true">mintemp: {{day.tempmin | toCelsius}}</div>
+            </ion-col>
+            <ion-col>
+                <div class="text"  *ngIf="toCelsius===false">maxtemp: {{day.tempmax}}</div>
+                <div class="text"  *ngIf="toCelsius===true">maxtemp: {{day.tempmax | toCelsius}}</div>
+            </ion-col>
+        </ion-row>
+        <p class="text ion-margin-bottom">{{day.description}}</p> 
+        <ion-row class="ion-margin-bottom">
+            <ion-col><p class="text">Visibility:</p></ion-col>
+            <ion-col><p class="text" *ngIf="toKm===false">{{day.visibility}}</p></ion-col>
+            <ion-col><p class="text" *ngIf="toKm===true">{{day.visibility | toKm}}</p></ion-col>
+        </ion-row>
+        <ion-row size="12" class="ion-margin-bottom">
+            <ion-col ><p class="text">sunrise:<br> {{day.sunrise}}</p></ion-col>
+            <ion-col><p class="text">sunset: <br> {{day.sunset}}</p></ion-col>
+        </ion-row>
+        <ion-row size="12" class="ion-margin-bottom">
+            <ion-col>
+                <div class="text" *ngIf="toCelsius===false">feels like min:<br> {{day.feelslikemin}}</div>
+                <div class="text" *ngIf="toCelsius===true">feels like min:<br> {{day.feelslikemin | toCelsius}}</div>
+            </ion-col>
+            <ion-col>
+                <div class="text" *ngIf="toCelsius===false">feels like max:<br> {{day.feelslikemax}}</div>
+                <div class="text" *ngIf="toCelsius===true">feels like max:<br> {{day.feelslikemax | toCelsius}}</div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-bottom">
+            <ion-col size="8"><p class="text">UV Index:</p></ion-col>
+            <ion-col><p class="text">{{day.uvindex}}</p></ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-bottom">
+            <ion-col size="8"><p class="text">windspeed:</p></ion-col>
+            <ion-col><p class="text" *ngIf="toKm===false">{{day.windspeed}}</p></ion-col>
+            <ion-col><p class="text" *ngIf="toKm===true">{{day.windspeed|toKm}}</p></ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-bottom">
+            <ion-col size="8"><p class="text">windgust:</p></ion-col>
+            <ion-col><p class="text" *ngIf="toKm===false">{{day.windgust}}</p></ion-col>
+            <ion-col><p class="text" *ngIf="toKm===true">{{day.windgust|toKm}}</p></ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-bottom">
+            <ion-col size="8"><p class="text">humidity:</p></ion-col>
+            <ion-col><p class="text">{{day.humidity}}</p></ion-col>
+        </ion-row>
+    </div>
+</ion-content>

@@ -1,0 +1,16 @@
+<ion-tabs style="top: 10vh;" slot="bottom">
+  <ion-tab-bar slot="bottom" [ngClass]="{tabDark:toDark===false}">
+      <ion-tab-button  tab="main" [ngClass]="{tabDark:toDark===false}">
+        <ion-icon name="cloud-circle-sharp"></ion-icon>
+        Main
+      </ion-tab-button>
+      <ion-tab-button tab="saved" [ngClass]="{tabDark:toDark===false}" [disabled]="isAuth===false">
+        <ion-icon name="bookmark-sharp" ></ion-icon>
+        Saved cities
+      </ion-tab-button>
+      <ion-tab-button tab="user" [ngClass]="{tabDark:toDark===false}">
+        <ion-icon name="person-sharp"  ></ion-icon>
+        User
+      </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

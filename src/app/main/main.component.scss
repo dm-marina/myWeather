@@ -1,0 +1,35 @@
+@import './current-weather/current-weather.component.scss';
+$color-dark:rgb(255, 255, 240);
+$color-light:#040D12;
+.main-content{
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(204,207,200,0.9164915966386554) 0%,
+    rgba(81,169,173,0.8240546218487395) 65%, rgba(109,145,189,0.9024859943977591) 100%);
+    height:max-content;
+    position: relative;
+    top: -7px;
+    .name{
+        font-size: 30px;
+        margin: 30px 0 30px 30px;
+        color: $color-light;
+    }
+    .center-block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.mainDark{
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(132,118,105,0.9164915966386554) 0%,
+    rgba(109,113,118,0.9585084033613446) 0%, rgba(59,85,84,0.9529061624649859) 49%, rgba(13,52,57,0.9360994397759104) 100%);
+    height:max-content;
+    position: relative;
+    top: -7px;
+    .name{
+        color: $color-dark;
+    }
+}
+
+

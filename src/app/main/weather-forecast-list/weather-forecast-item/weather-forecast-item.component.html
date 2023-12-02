@@ -1,0 +1,38 @@
+<div class="column" [ngClass]="{columnDark:toDark===false}">
+    <p class="day">{{day.datetime |date:'EEEE'}}</p> 
+    <h3 class="temp" *ngIf="toCelsius===false">{{day.tempmax}} </h3>
+    <h3 class="temp" *ngIf="toCelsius===true">{{day.tempmax | toCelsius}} </h3>
+    <p class="text">{{day.conditions}}</p>
+    <span class="weather-icon ion-margin-top ion-margin-bottom"> 
+        <img src="../../../assets/images/{{day.icon}}.svg" alt="{{day.icon}}">
+    </span>
+    <ion-row size="12">
+        <ion-col >
+            <div class="text" *ngIf="toCelsius===false">mintemp:{{day.tempmin}},</div>
+            <div class="text" *ngIf="toCelsius===true">mintemp:{{day.tempmin | toCelsius}},</div>
+        </ion-col>
+        <ion-col>
+            <div class="text" *ngIf="toCelsius===false">maxtemp:{{day.tempmax}}</div>
+            <div class="text" *ngIf="toCelsius===true">maxtemp:{{day.tempmax | toCelsius}}</div>
+        </ion-col>
+    </ion-row>
+    <ion-button class="ion-margin-top ripple-parent rounded-rectangle" color="light" 
+    expand="block" (click)="openModal(true)">
+        Show daily forecast
+    </ion-button>
+    <ion-modal [isOpen]="isModalOpen">
+        <ng-template>
+            <div class="modal">
+                <ion-header>
+                    <ion-toolbar>
+                        <ion-title>Daily forecast</ion-title>
+                        <ion-buttons slot="end">
+                            <ion-button (click)="openModal(false)"><ion-icon name="close-circle-sharp"></ion-icon></ion-button>
+                        </ion-buttons>
+                    </ion-toolbar>
+                </ion-header>
+                <app-weather-forecast-inform >{{dayIndex}}</app-weather-forecast-inform>
+            </div>
+        </ng-template>
+    </ion-modal>
+</div>

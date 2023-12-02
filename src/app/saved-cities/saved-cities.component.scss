@@ -1,0 +1,28 @@
+$color-dark:rgb(255, 255, 240);
+$color-light:#040D12;
+.saved-content{
+    position: relative;
+    top: -7px;
+    background: rgb(197,187,177);
+    width: 100%;
+    height: 100%;
+    ion-button{
+        color: $color-light;
+        --border-color: #48686b;
+    }
+    .title{
+        color: $color-light;
+        font-size: 25px;
+        font-weight: bolder;
+    }
+}
+.savedContentDark{
+    background: #2b4e52;
+    ion-button{
+        color: $color-dark;
+        --border-color:$color-dark;
+    }
+    .title{
+        color: $color-dark;
+    }
+}

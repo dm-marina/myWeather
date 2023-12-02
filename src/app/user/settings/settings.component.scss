@@ -1,0 +1,24 @@
+$lightstyle:#183D3D;
+.settings{
+    background: rgb(229,224,220);
+    border-radius: 5px;
+    box-shadow: 22px 25px 26px -22px rgba(0,0,0,0.47);
+    -webkit-box-shadow: 22px 25px 26px -22px rgba(0,0,0,0.47);
+    -moz-box-shadow: 22px 25px 26px -22px rgba(0,0,0,0.47);
+
+    ion-icon{
+        width: 30px;
+        height: 30px;
+    }
+    h3{
+        color: $lightstyle;
+    }
+    .column{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.settingsDark{
+    background: #48686b;
+}

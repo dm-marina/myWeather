@@ -1,0 +1,19 @@
+
+ion-tabs{
+    height: calc(55px + 560px + 550px);
+}
+ion-tab-bar, ion-tab-button{
+    background: rgb(229,224,220);
+    border-right: 1px solid  rgba(135,157,185,0.9529061624649859);
+}
+ion-tab-bar{
+    position: fixed;
+    width: 100%;
+    top:calc(55px + 560px + 500px);
+}
+.tabDark{
+    background: #7c9597;
+    ion-icon, ion-tab-button{
+        color:#040D12;
+    }
+}

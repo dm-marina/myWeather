@@ -1,0 +1,13 @@
+.carousel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    background:  rgba(135,157,185,0.9529061624649859);
+    margin-top: 30px;
+    z-index: 0;
+}
+.carouselDark{
+    background: #3b5554;
+}
+      

@@ -1,0 +1,5 @@
+    <carousel [ngClass]="{carouselDark:toDark===false}">
+        <app-weather-forecast-item  *ngFor="let dayEl of days; let i=index" 
+        [day]="dayEl" [index]="i"
+        class="carousel-cell weather-item" ></app-weather-forecast-item>
+    </carousel>

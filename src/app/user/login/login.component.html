@@ -1,0 +1,50 @@
+<ion-col class="ion-margin-top">
+  <a (click)="onSwitchMode()" [ngClass]="{switchDark:toDark===false}">{{isLogginMode? 'Registration' : 'Authentication'}}</a>
+</ion-col>
+<form (ngSubmit)="onSubmit(authForm)" #authForm="ngForm" class="ion-margin-bottom">
+  <div class="auth" *ngIf="!isAuthenticated" [ngClass]="{darkStyle:toDark===false}"> 
+    <div class="registration" *ngIf="!isLogginMode">
+      <ion-row>
+        <ion-col>
+          <ion-input placeholder="Enter your name" type="text" 
+          name="name"
+          id="name"
+          ngModel
+          required></ion-input>
+      </ion-col>
+      <ion-col>
+          <ion-input placeholder="Enter your surname" type="text" 
+          id="sname"
+          name="sname"
+          ngModel
+          required></ion-input>
+      </ion-col>
+      </ion-row> 
+    </div>
+    <div class="form-group">
+      <ion-input placeholder="email@domain.com" type="email"
+        name="email" 
+        id="email"
+        ngModel
+        required
+        email>
+      </ion-input>
+    </div>
+    <div class="form-group">
+      <ion-input placeholder="Password" value="Password" type="password" 
+        id="password"
+        name="password"
+        ngModel
+        required
+        minlength="6">
+      </ion-input>
+    </div>
+    <ion-button class="ripple-parent rounded-rectangle" color="light"
+    type="submit"
+    [disabled]="!authForm.valid">
+      {{isLogginMode? 'LogIn' : 'SignUp'}}
+    </ion-button>
+  </div>
+  <ion-button *ngIf="isAuthenticated"
+  class="ripple-parent rounded-rectangle ion-margin-top" color="light" type="button" (click)="onLogout()">LogOut</ion-button>  
+</form>

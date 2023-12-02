@@ -1,0 +1,36 @@
+<ion-card class="current-weather ion-text-center" [ngClass]="{currentDark:toDark===false}">
+    <p class="day">Now</p> 
+    <h3 class="temp" *ngIf="toCelsius===false">{{weather?.temp}} </h3>
+    <h3 class="temp" *ngIf="toCelsius===true">{{weather?.temp | toCelsius}} </h3>
+    <p class="text">{{weather?.conditions}}</p>
+    <span class="weather-icon ion-margin-top ion-margin-bottom"> 
+        <img src="../../../assets/images/{{weather?.icon}}.svg" alt="{{weather?.icon}}">
+    </span>
+    <ion-row class="ion-margin-bottom">
+        <ion-col size="8"><p class="text">feels like:</p></ion-col>
+        <ion-col><p class="text" *ngIf="toCelsius===false">{{weather?.feelslike}}</p></ion-col>
+        <ion-col><p class="text" *ngIf="toCelsius===true">{{weather?.feelslike | toCelsius}}</p></ion-col>
+    </ion-row>
+    <ion-row class="ion-margin-bottom">
+        <ion-col size="8"><p class="text">UV Index:</p></ion-col>
+        <ion-col><p class="text">{{weather?.uvindex}}</p></ion-col>
+    </ion-row>
+    <ion-row class="ion-margin-bottom">
+        <ion-col size="8"><p class="text">windspeed:</p></ion-col>
+        <ion-col><p class="text" *ngIf="toKm===false">{{weather?.windspeed}}</p></ion-col>
+        <ion-col><p class="text" *ngIf="toKm===true">{{weather?.windspeed | toKm}}</p></ion-col>
+    </ion-row>
+    <ion-row class="ion-margin-bottom">
+        <ion-col size="8"><p class="text">windgust:</p></ion-col>
+        <ion-col><p class="text" *ngIf="toKm===false">{{weather?.windgust}}</p></ion-col>
+        <ion-col><p class="text" *ngIf="toKm===true">{{weather?.windgust | toKm}}</p></ion-col>
+    </ion-row>
+    <ion-row class="ion-margin-bottom">
+        <ion-col size="8"><p class="text">humidity:</p></ion-col>
+        <ion-col><p class="text">{{weather?.humidity}}</p></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col><p class="text">sunrise:<br> {{weather?.sunrise}}</p></ion-col>
+        <ion-col><p class="text">sunset: <br> {{weather?.sunset}}</p></ion-col>
+    </ion-row>
+</ion-card>

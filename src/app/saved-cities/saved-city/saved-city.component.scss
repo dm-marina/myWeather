@@ -1,0 +1,29 @@
+$color-dark:rgb(255, 255, 240);
+$color-light:#040D12;
+.saved-city{
+    background: rgb(229,224,220);
+    border-radius: 5px;
+    box-shadow: 22px 25px 26px -22px rgba(0,0,0,0.47);
+    -webkit-box-shadow: 22px 25px 26px -22px rgba(0,0,0,0.47);
+    -moz-box-shadow: 22px 25px 26px -22px rgba(0,0,0,0.47);
+    h4{
+        text-transform: capitalize;
+        font-size: 23px;
+        color: $color-light;
+    }
+    .text{
+        color: $color-light;
+        font-size: 20px;
+        font-weight: bolder;
+
+    }
+}
+.savedDark{
+    background: #48686b;
+    h4{
+        color: $color-dark;
+    }
+    .text{
+        color: $color-dark;
+    }
+}

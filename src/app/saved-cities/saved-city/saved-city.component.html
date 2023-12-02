@@ -1,0 +1,15 @@
+<ion-row class="saved-city  ion-padding ion-align-items-center ion-margin-bottom" 
+[ngClass]="{savedDark:toDark===false}" (click)="openForecast()">
+  <ion-col><h4 size="4">{{city.address}}</h4></ion-col>
+  <ion-col *ngIf="toCelsius===false"><p class="text">{{city.currentConditions.temp}}</p></ion-col>
+  <ion-col *ngIf="toCelsius===true"><p class="text">{{city.currentConditions.temp|toCelsius}}</p></ion-col>
+  <ion-col size="2" >
+    <img src="../../assets/images/{{city.currentConditions.icon}}.svg" 
+    alt="{{city.currentConditions.icon}}" width="40px" height="40px">
+  </ion-col>
+  <ion-col size="2" >
+    <ion-button (click)="deleteCity()" fill="clear" color="danger">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-col>
+</ion-row>

@@ -1,0 +1,24 @@
+<div class="saved-content" [ngClass]="{savedContentDark:toDark===false}" >
+    <form>
+        <ion-row class="search ion-margin-top">
+            <ion-col size="8">
+                <ion-searchbar animated="true" placeholder="Fine" type="text" name="search" [(ngModel)]="cityStr"
+                  required>
+                </ion-searchbar>
+            </ion-col>
+            <ion-col size="4">
+                <ion-button fill="outline"  size="small" class="ion-margin-top" (click)="saveCity()">Save city</ion-button>
+            </ion-col>
+        </ion-row>
+    </form>
+    <h3 class="title ion-margin-top ion-text-center">List of saved cities</h3>
+    <div class="list ion-margin-top ion-padding">
+        <app-saved-city
+         *ngFor="let elem of savedCities; let i=index;"
+          [city]="elem" [index]="i"></app-saved-city>
+          <ion-col size="3">
+            <ion-button fill="outline"  size="small" class="ion-margin-top" (click)="updateList()">Update list</ion-button>
+        </ion-col>
+    </div>
+  
+</div>

@@ -1,0 +1,12 @@
+$lightstyle:#183D3D;
+$color-dark:rgb(255, 255, 240);
+$color-dark-add:#cad8d8;
+a{
+    color: $lightstyle;
+}
+.switchDark{
+    color: $color-dark;
+}
+.darkStyle{
+    color: $color-dark-add;
+}

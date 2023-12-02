@@ -1,0 +1,39 @@
+@import '../weather-forecast-item.component.scss';
+$lightstyle:#183D3D;
+$color-dark:rgb(229,224,220);
+ion-content,.column{
+        background: rgb(229,224,220);
+        width: 100%;
+        position: relative;
+        top: -1%;
+    .day{
+        margin-top: 30px;
+        font-size: 27px;
+    }
+    .temp{
+        font-size: 35px;
+    }
+    .text{
+        font-size: 22px;
+    }
+    ion-row{
+        min-width: 400px;
+    }
+    ion-row:last-child{
+        margin-bottom: 40px;
+    }
+    .weather-icon{
+        width: 100px;
+        height: 100px;
+       img{
+        width: 100px;
+        height: 100px;
+       } 
+    }
+}
+.columnDark{
+    background: #5b787b;
+    .day, .temp, text{
+        color: $color-dark;
+    }
+}
